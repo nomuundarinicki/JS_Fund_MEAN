@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>JavaScript Objects Assignment</title>
+  </head>
+  <body>
+    JavaScript Objects Assignment
+    <script>
+      // Challenge 1
+      function printStudents(){
+        // Test Array
+        let students = [
+        {name: 'Remy', cohort: 'Jan'},
+        {name: 'Genevieve', cohort: 'March'},
+        {name: 'Chuck', cohort: 'Jan'},
+        {name: 'Osmund', cohort: 'June'},
+        {name: 'Nikki', cohort: 'June'},
+        {name: 'Boris', cohort: 'June'}
+        ]
+        // Printing
+        for (let i = 0; i < students.length; ++i){
+          let thisLine = `Name: ${students[i]
+            .name}, Cohort: ${students[i].cohort}`;
+          console.log(thisLine);
+        }
+      }
+      // Challenge 2
+      function printUsers(){
+        // Test Object
+        let users = {
+          employees: [
+              {'first_name':  'Miguel', 'last_name' : 'Jones'},
+              {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+              {'first_name' : 'Nora', 'last_name' : 'Lu'},
+              {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+          ],
+          managers: [
+            {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+            {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+          ]
+        };
+        // Printing
+        for (let category in users){
+          console.log(category.toUpperCase());
+          for (let i = 0; i < users[category].length; ++i){
+            fullNameLength = users[category][i].last_name.length +
+              users[category][i].first_name.length;
+            firstName = users[category][i].first_name.toUpperCase();
+            lastName = users[category][i].last_name.toUpperCase();
+            console.log(`${i+1} - ${lastName}, ${firstName} - ${fullNameLength}`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

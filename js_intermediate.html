@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>JavaScript Intermediate Assignment</title>
+  </head>
+  <body>
+    JavaScript Intermediate Assignment
+  </body>
+  <script>
+
+  // Part I
+  function star_string(num){
+    var new_string = '';
+    for (let i = 1; i <= num; ++i){
+      new_string += '*';
+    }
+    return new_string;
+  }
+  // Part II
+  // function draw_stars(numList){
+  //   for (let i = 0; i < numList.length; ++i){
+  //     console.log(star_string(numList[i]));
+  //   }
+  // }
+  // Part III
+  function draw_stars(numList){
+    for (let i = 0; i < numList.length; ++i){
+      if (Object.prototype.toString.call(numList[i]) == '[object String]'){
+        let starString = star_string(numList[i].length);
+        let initial = numList[i].substring(0, 1).toLowerCase();
+        let replaceString = starString.replace(/\*/g, initial);
+        console.log(replaceString);
+      }else{
+        console.log(star_string(numList[i]));
+      }
+    }
+  }
+
+  </script>
+</html>
